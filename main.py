@@ -13,32 +13,22 @@ alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N'
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 import random
-
-
-
 def hangman():
     print('Welcome to the hangman.py')
-    lives = 6 #vidas
+    lives = 6
     print(f'Your live: {lives}')
-    x = random.randint(0, len(word_list) - 1) #random para escolher a palavra
-    word_to_guess = word_list[x] #palavra a ser advinhada
+    x = random.randint(0, len(word_list) - 1)
+    word_to_guess = word_list[x]
 
-
-    # criar uma visualização da palavra, _ de todas as letras
     vis = []
     for x in word_to_guess:
         vis.append('_')
     vis_str = ''.join(vis)
     print(f'Word to guess: {vis_str}')
-    #print(vis_str)
-    #print(word_to_guess)
 
-    #keep track da letras tentadas
     tried = []
     while lives != 0 and vis_str != word_to_guess:
         tried_letter = input('Input a letter: ')
-
-
 
         if tried_letter in alphabet:
             tried.append(tried_letter)
@@ -68,20 +58,4 @@ def hangman():
         print(f'You\'ve ran out of lives, you ded now \n The word was "{word_to_guess}"')
 
 
-    #mostrar a palvra com as letras acertadas e underline no resto
-    #quando a letra tiver no vis[] colocar o num
-
-
-
-
-
-
-
-
-
-
-
-
-
 hangman()
-
